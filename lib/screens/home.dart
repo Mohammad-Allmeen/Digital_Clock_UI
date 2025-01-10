@@ -2,6 +2,8 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
+import 'custom_time_picker.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -114,12 +116,22 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                width: 250,
+                width: 230,
                 child: FloatingActionButton.extended(onPressed: (){},
                     label: const Text('12:00', style: TextStyle(fontSize: 30),),
                   shape: const StadiumBorder(),
                   backgroundColor: Colors.black87,
                   foregroundColor: Color(0xffa8c889),
+                ),
+              ),
+              IconButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const CustomTimePicker()));
+              },
+                  icon: Icon(Icons.add,),
+                style: IconButton.styleFrom(
+                  foregroundColor: Color(0xffa8c889),
+                  backgroundColor: Colors.black87,
+                  fixedSize: const Size(60,60)
                 ),
               )
             ],
